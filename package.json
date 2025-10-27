@@ -1,0 +1,23 @@
+{
+  "name": "wasm-webgpu-vite",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:wasm": "cd rust-wasm && wasm-pack build --target web"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-wasm": "^3.3.0",
+    "vite-plugin-top-level-await": "^1.4.1"
+  },
+  "dependencies": {
+    "@webgpu/types": "^0.1.40"
+  }
+}
+
