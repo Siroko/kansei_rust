@@ -7,17 +7,18 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "build:wasm": "cd rust-wasm && wasm-pack build --target web"
+    "build:wasm": "cd rust-wasm && wasm-pack build --target web",
+    "watch:wasm": "chokidar 'rust-wasm/src/**/*.rs' -c 'npm run build:wasm'"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
+    "chokidar-cli": "^3.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",
-    "vite-plugin-wasm": "^3.3.0",
-    "vite-plugin-top-level-await": "^1.4.1"
+    "vite-plugin-top-level-await": "^1.4.1",
+    "vite-plugin-wasm": "^3.3.0"
   },
   "dependencies": {
     "@webgpu/types": "^0.1.40"
   }
 }
-

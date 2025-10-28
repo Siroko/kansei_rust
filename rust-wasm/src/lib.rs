@@ -24,7 +24,7 @@ impl Engine {
     pub async fn new(canvas_id: &str, width: u32, height: u32) -> Result<Engine, JsValue> {
         log::info!("Creating new Engine...");
 
-        let renderer = Renderer::new(canvas_id, true).await?;
+        let renderer = Renderer::new(canvas_id, false).await?;
         let scene = Scene::new();
         let aspect = width as f32 / height as f32;
         let camera = Camera::new(75.0, 0.1, 1000.0, aspect);
@@ -54,7 +54,7 @@ impl Engine {
         self.camera_controls.update(delta_time);
         
         // Animate all meshes in the grid with wave effect
-        let grid_size = 100;
+        let grid_size = 10;
         
         for (i, mesh) in self.scene.children.iter_mut().enumerate() {
             // Calculate grid position
@@ -97,7 +97,7 @@ impl Engine {
         self.renderer.set_clear_color(0.0, 0.0, 0.0, 1.0);
         
         // Create a 10x10 grid of cubes on the XY plane
-        let grid_size = 100;
+        let grid_size = 10;
         let spacing = 1.0;
         let cube_size = 1.0;
         
